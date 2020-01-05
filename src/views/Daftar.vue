@@ -59,6 +59,7 @@
 </template>
 
 <script>
+import { pesertaCollection } from '../firebase'
 export default {
   data(){
     return {
@@ -73,7 +74,22 @@ export default {
   methods: {
     submitData(){
       if(this.namaPeserta != '' && this.emailPeserta != '' && this.asalPeserta != '' && this.kontakPeserta != '' && this.pembayaranPeserta != ''){
+        pesertaCollection.add({
+          Nama: this.namaPeserta,
+          Email: this.emailPeserta,
+          Asal: this.asalPeserta,
+          Kontak: this.kontakPeserta,
+          Pembayaran: this.pembayaranPeserta,
+          RegisterAt: new Date()
+        })
+        .then(function (docRef) {
+          console.log('Document written with ID: ', docRef.id)
+        })
+        .catch(function (error) {
+          console.error('Error adding document: ', error)
+        })
         console.log(this.namaPeserta, this.emailPeserta, this.asalPeserta, this.pembayaranPeserta)
+        this.success()
       } else {
         this.danger()
       }
@@ -92,7 +108,19 @@ export default {
       this.asalPeserta = ''
       this.kontakPeserta = ''
       this.pembayaranPeserta = ''
-      this.toast()
+      this.$buefy.toast.open('Data direset')
+    },
+    success(){
+      this.namaPeserta = ''
+      this.emailPeserta = ''
+      this.asalPeserta = ''
+      this.kontakPeserta = ''
+      this.pembayaranPeserta = ''
+      this.$buefy.toast.open({
+        message: `Pendaftaran Berhasil`,
+        position: 'is-top',
+        type: 'is-success'
+      })
     },
     toast() {
         this.$buefy.toast.open('Data direset')

@@ -8,7 +8,8 @@
             Technocorner 2020
           </h1>
           <h2 class="subtitle">
-            Semnas
+            Semnas <br>
+            masih beta wkwkwk
           </h2>
           <h3 class="heading">
             Presented by. Sponsornya
