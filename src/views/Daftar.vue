@@ -1,0 +1,116 @@
+<template>
+  <div class="daftar">
+    <div class="container">
+      <h1 class="title">Daftar</h1>
+      <div class="form">
+        <b-field label="Nama" :label-position="labelPosition">
+            <b-input value="" placeholder="Masukkan Nama" v-model="namaPeserta"></b-input>
+        </b-field>
+      </div>
+      <div class="form">
+        <b-field label="Email" :label-position="labelPosition">
+            <b-input value="" placeholder="Masukkan Email" v-model="emailPeserta"></b-input>
+        </b-field>
+      </div>
+      <div class="form">
+        <b-field label="Asal Institusi" :label-position="labelPosition">
+            <b-input value="" placeholder="Masukkan Asal Institusi" v-model="asalPeserta"></b-input>
+        </b-field>
+      </div>
+      <div class="form">
+        <b-field label="No HP/ID Line" :label-position="labelPosition">
+            <b-input value="" placeholder="Masukkan No HP/ID Line" v-model="kontakPeserta"></b-input>
+        </b-field>
+      </div>
+      <div class="form">
+        <b-field label="Pembayaran Via">
+          <div class="block">
+            <b-radio v-model="pembayaranPeserta"
+                  name="name"
+                  native-value="Transfer">
+                Transfer
+            </b-radio>
+            <b-radio v-model="pembayaranPeserta"
+                  name="name"
+                  native-value="Offline">
+                Offline
+            </b-radio>
+          </div>
+        </b-field>
+      </div>
+
+
+      <div class="buttons">
+        <button class="button is-success"
+            @click="submitData()
+            ">
+            <b-icon pack="fas" icon="check"></b-icon>
+            <span>Submit</span>
+        </button>
+        <button class="button is-danger"
+            @click="reset()"
+            >
+            <b-icon pack="fas" icon="trash"></b-icon>
+            <span>Reset</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data(){
+    return {
+      labelPosition: 'on-border',
+      namaPeserta:'',
+      emailPeserta: '',
+      asalPeserta: '',
+      kontakPeserta: '',
+      pembayaranPeserta: ''
+    }
+  },
+  methods: {
+    submitData(){
+      if(this.namaPeserta != '' && this.emailPeserta != '' && this.asalPeserta != '' && this.kontakPeserta != '' && this.pembayaranPeserta != ''){
+        console.log(this.namaPeserta, this.emailPeserta, this.asalPeserta, this.pembayaranPeserta)
+      } else {
+        this.danger()
+      }
+    },
+    danger() {
+        this.$buefy.toast.open({
+            duration: 5000,
+            message: `Data tidak boleh kosong`,
+            position: 'is-top',
+            type: 'is-danger'
+        })
+    },
+    reset(){
+      this.namaPeserta = ''
+      this.emailPeserta = ''
+      this.asalPeserta = ''
+      this.kontakPeserta = ''
+      this.pembayaranPeserta = ''
+      this.toast()
+    },
+    toast() {
+        this.$buefy.toast.open('Data direset')
+    },
+  }
+}
+</script>
+
+<style>
+  .daftar{
+    margin-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .title{
+    text-align: center;
+  }
+  .form{
+    margin-bottom: 18px
+  }
+</style>
