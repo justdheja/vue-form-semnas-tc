@@ -1,9 +1,10 @@
 <template>
   <div class="success">
-    <h1 class="title has-text-centered">
-      Terima Kasih<br>Sudah Melakukan Pendaftaran Seminar Nasional.
+    <h1 class="has-text-centered montserrat">
+      <strong>Terima Kasih</strong><br>Sudah Melakukan Pendaftaran Seminar Nasional.
     </h1>
-    <p class="subtitle has-text-centered">
+    <hr>
+    <p class="has-text-left silakan">
       Silakan melakukan konfirmasi pembayaran melalui<br>
       line : azami06mufa<br>
       WA : 081324245310
@@ -11,8 +12,22 @@
   </div>
 </template>
 
-<style>
+<style scoped>
   .success{
-    padding: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+    padding-bottom: 15%;
+  }
+  .montserrat{
+    font-size: 30px;
+  }
+  .silakan{
+    margin-top: 30px;
+    font-size: 20px;
+  }
+  hr{
+    border-bottom: 3px solid;
+    border-color: black;
   }
 </style>

@@ -1,6 +1,11 @@
 <template>
   <div>
-    <footer class="footer">
+    <footer class="footer" style="
+    background-color: #111111;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+    ">
       <div class="content has-text-centered">
         <div class="columns is-mobile">
           <div class="column">
@@ -35,12 +40,6 @@
 </template>
 
 <style>
-.footer{
-  background-color: #111111;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 10%;
-}
 .sosmed{
   font-size: 50px;
   color: grey;
