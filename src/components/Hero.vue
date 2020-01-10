@@ -1,18 +1,17 @@
 <template>
   <div>
-    <section class="hero is-primary is-fullheight">
+    <section class="hero is-primary is-fullheight" :style="'background-image:url('+bg+'); background-size: cover; background-position: center center; background-attachment: fixed'">
       <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title">
-            Technocorner 2020
+            NATIONAL SEMINAR
           </h1>
           <h2 class="subtitle">
-            Semnas <br>
-            masih beta wkwkwk
+            Technocorner 2020
           </h2>
           <h3 class="heading">
-            Presented by. Sponsornya
+            Presented by. Grab
           </h3>
         </div>
       </div>
@@ -25,7 +24,7 @@
               <router-link to="/">
               <li class="navitem">
                 <a>
-                  <h1 class="navitem">
+                  <h1 class="navitem alata">
                     Tentang Semnas
                   </h1>
                 </a>
@@ -34,7 +33,7 @@
               <router-link to="/Daftar">
               <li>
                 <a>
-                  <h1 class="navitem">
+                  <h1 class="navitem alata">
                     Daftar
                   </h1>
                 </a>
@@ -48,8 +47,19 @@
   </div>
 </template>
 
-<style>
-  .hero{
-    margin-bottom: 10%;
+<script>
+import bg from '../assets/background.png'
+import tc from '../assets/fonts/CorporationGames.otf'
+export default {
+  data(){
+    return {
+      bg: bg,
+      tc: tc,
+    }
   }
+}
+</script>
+
+<style>
+
 </style>

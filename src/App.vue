@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Hero></Hero>
-    <router-view/>
+        <router-view/>
     <Footer></Footer>
   </div>
 </template>
@@ -19,11 +19,14 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
-  color: #2c3e50;
+@import url('https://fonts.googleapis.com/css?family=Alata|Montserrat&display=swap');
+#app{
+  background-color: #E6E0D7;
+}
+.alata{
+  font-family: 'Alata', sans-serif;
+}
+.montserrat{
+  font-family: 'Montserrat', sans-serif;
 }
 </style>

@@ -41,18 +41,22 @@
 
 
       <div class="buttons">
+        <router-link to="/Success">
         <button class="button is-success"
-            @click="submitData()
-            ">
+            @click="submitData()"
+            >
             <b-icon pack="fas" icon="check"></b-icon>
             <span>Submit</span>
         </button>
+        </router-link>
+
         <button class="button is-danger"
             @click="reset()"
             >
             <b-icon pack="fas" icon="trash"></b-icon>
             <span>Reset</span>
         </button>
+
       </div>
     </div>
   </div>
@@ -131,14 +135,15 @@ export default {
 
 <style>
   .daftar{
-    margin-top: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 10%;
   }
   .title{
     text-align: center;
   }
   .form{
     margin-bottom: 18px
+  }
+  .button{
+    margin-right: 5px;
   }
 </style>
