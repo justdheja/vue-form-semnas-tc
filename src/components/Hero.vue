@@ -4,15 +4,16 @@
       <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
-          <h1 class="title">
+          <img class="logo" :src="logo" alt="" style="width: 150px;">
+          <h1 class="montserrat">
+            "Conforming Technology for a Better Nation"
+          </h1>
+          <h1 class="title alta semnas" style="margin-top: 20px;">
             NATIONAL SEMINAR
           </h1>
           <h2 class="subtitle">
             Technocorner 2020
           </h2>
-          <h3 class="heading">
-            Presented by. Grab
-          </h3>
         </div>
       </div>
 
@@ -49,17 +50,22 @@
 
 <script>
 import bg from '../assets/background.png'
-import tc from '../assets/fonts/CorporationGames.otf'
+import logo from '../assets/logotc.png'
 export default {
   data(){
     return {
       bg: bg,
-      tc: tc,
+      logo: logo,
     }
   }
 }
 </script>
 
-<style>
-
+<style scoped>
+.logo{
+  width: 1px;
+}
+.semnas{
+  margin-top: 10px;
+}
 </style>
