@@ -16,7 +16,10 @@
                     <br>
                     <strong>Tanggal : </strong> 14 Maret 2020 <br>
                     <strong>Waktu  : </strong> 07.00 - 15.30 <br>
-                    <strong>Tempat  : </strong> MM FEB UGM <br>
+                    <strong>Tempat  : </strong> MM FEB UGM <br> <br>
+                    Contact Person: <br>
+                    <strong>Azami</strong> 081324245310 <br>
+                    <strong>Nandit</strong> 081330018605 <br>
                   </p>
 
                     <br>

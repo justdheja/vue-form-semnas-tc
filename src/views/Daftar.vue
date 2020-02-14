@@ -9,7 +9,7 @@
       </div>
       <div class="form">
         <b-field label="Email" :label-position="labelPosition">
-            <b-input value="" placeholder="Masukkan Email" v-model="emailPeserta"></b-input>
+            <b-input type="email" value="" placeholder="Masukkan Email" v-model="emailPeserta"></b-input>
         </b-field>
       </div>
       <div class="form">
@@ -22,6 +22,7 @@
             <b-input value="" placeholder="Masukkan No HP/ID Line" v-model="kontakPeserta"></b-input>
         </b-field>
       </div>
+      HTM: Rp 60.000,00
       <div class="form">
         <b-field label="Pembayaran Via">
           <div class="block">
@@ -37,6 +38,15 @@
             </b-radio>
           </div>
         </b-field>
+
+      <p v-if="pembayaranPeserta == 'Transfer'">
+        Silakan melakukan pembayaran ke rekening: <br>
+        755222458 <strong>BNI</strong> <br>
+        a.n Dimas Sofian Ashari
+      </p>
+      <p v-if="pembayaranPeserta == 'Offline'">
+        Pembayaran offline akan dibuka di bulan Februari
+      </p>
       </div>
 
 
@@ -56,7 +66,6 @@
             <b-icon pack="fas" icon="trash"></b-icon>
             <span>Reset</span>
         </button>
-
       </div>
     </div>
   </div>
@@ -72,7 +81,13 @@ export default {
       emailPeserta: '',
       asalPeserta: '',
       kontakPeserta: '',
-      pembayaranPeserta: ''
+      pembayaranPeserta: '',
+      pesertas: []
+    }
+  },
+  firestore(){
+    return {
+      pesertas: pesertaCollection.orderBy('RegisterAt')
     }
   },
   methods: {
@@ -84,7 +99,9 @@ export default {
           Asal: this.asalPeserta,
           Kontak: this.kontakPeserta,
           Pembayaran: this.pembayaranPeserta,
-          RegisterAt: new Date()
+          Status: 'Unpaid',
+          RegisterAt: new Date(),
+          id: this.pesertas.length
         })
         .then(function (docRef) {
           console.log('Document written with ID: ', docRef.id)
