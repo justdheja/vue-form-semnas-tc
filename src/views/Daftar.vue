@@ -22,7 +22,7 @@
             <b-input value="" placeholder="Masukkan No HP/ID Line" v-model="kontakPeserta"></b-input>
         </b-field>
       </div>
-      HTM: Rp 60.000,00
+      HTM: Rp 65.000,00
       <div class="form">
         <b-field label="Pembayaran Via">
           <div class="block">
