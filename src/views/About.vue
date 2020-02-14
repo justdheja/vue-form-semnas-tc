@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import poster from '../assets/poster.png'
+import poster from '../assets/poster.jpg'
 export default {
   name: 'HelloWorld',
   data () {
