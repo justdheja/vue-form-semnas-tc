@@ -51,14 +51,12 @@
 
 
       <div class="buttons">
-        <router-link to="/Success">
         <button class="button is-success"
             @click="submitData()"
             >
             <b-icon pack="fas" icon="check"></b-icon>
             <span>Submit</span>
         </button>
-        </router-link>
 
         <button class="button is-danger"
             @click="reset()"
@@ -100,7 +98,7 @@ export default {
           Kontak: this.kontakPeserta,
           Pembayaran: this.pembayaranPeserta,
           Status: 'Unpaid',
-          RegisterAt: new Date(),
+          RegisterAt: new Date().toString(),
           id: this.pesertas.length
         })
         .then(function (docRef) {
@@ -111,6 +109,7 @@ export default {
         })
         console.log(this.namaPeserta, this.emailPeserta, this.asalPeserta, this.pembayaranPeserta)
         this.success()
+        this.$router.push('/Success')
       } else {
         this.danger()
       }
