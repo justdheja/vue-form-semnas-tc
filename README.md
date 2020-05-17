@@ -1,12 +1,14 @@
-# formsemnas
+# form-semnas
 
-> A Vue.js project
+:robot:
 
 ## Build Setup
 
 ``` bash
 # install dependencies
 npm install
+
+# insert your firebase config
 
 # serve with hot reload at localhost:8080
 npm run dev
